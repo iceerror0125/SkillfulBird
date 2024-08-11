@@ -1,0 +1,14 @@
+*.log
+*.tmp
+build/
+temp/
+Library/
+Logs/
+obj/
+Temp/
+UserSettings/
+.vsconfig
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-firstpass.csproj
+Skillful Bird.sln
