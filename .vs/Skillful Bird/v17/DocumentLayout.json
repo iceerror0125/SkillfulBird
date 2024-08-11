@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Unity Project\\Skillful Bird\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\pipe\\pipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pipe\\pipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\player\\playerstatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerstatehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|d:\\unity project\\skillful bird\\assets\\scripts\\skill\\skill2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\skill2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\skill\\skill1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skill\\skill1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\manager\\skillmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\skillmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\triggerscript\\pointtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\triggerscript\\pointtrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|D:\\Unity Project\\Skillful Bird\\assets\\scripts\\manager\\observer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE6CC058-87EE-1202-B1BC-6034D04FE37B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\observer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SkillManager.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Manager\\SkillManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SkillManager.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Manager\\SkillManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\SkillManager.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAwwEoAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:46:05.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PointTrigger.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\TriggerScript\\PointTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TriggerScript\\PointTrigger.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\TriggerScript\\PointTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TriggerScript\\PointTrigger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:45:51.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Observer.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Manager\\Observer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\Observer.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Manager\\Observer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\Observer.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAcwFQAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:42:19.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerStateHandler.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Player\\PlayerStateHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerStateHandler.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Player\\PlayerStateHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerStateHandler.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAewE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:41:45.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pipe.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Pipe\\Pipe.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Pipe\\Pipe.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Pipe\\Pipe.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Pipe\\Pipe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:40:20.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Skill2.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Skill\\Skill2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Skill2.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Skill\\Skill2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Skill2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:39:21.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Skill1.cs",
+              "DocumentMoniker": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Skill\\Skill1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Skill\\Skill1.cs",
+              "ToolTip": "D:\\Unity Project\\Skillful Bird\\Assets\\Scripts\\Skill\\Skill1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Skill\\Skill1.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T17:39:04.874Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
