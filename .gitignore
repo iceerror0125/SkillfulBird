@@ -8,6 +8,7 @@ obj/
 Temp/
 UserSettings/
 .vsconfig
+.vs/
 Assembly-CSharp.csproj
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp-firstpass.csproj
