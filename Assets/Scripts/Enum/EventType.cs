@@ -5,5 +5,10 @@ public enum EventType
     ChangePlayerState,
     GetState,
     Test,
-    PlusPoint
+    SkillOpenWay,
+
+    // UI
+    ResetPoint,
+    PlusPoint,
+    ShowGameOverPanel,
 }

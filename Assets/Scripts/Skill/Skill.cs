@@ -7,6 +7,7 @@ public abstract class Skill
 {
     private int charmId;
     public int CharmId => charmId;
+    private bool beingActiveSkill;
 
     public Skill(int charmId)
     {
@@ -20,7 +21,7 @@ public abstract class Skill
     {
         if (!DoSkill())
         {
-            OnSkillFinish();
+            FinishSkill();
             SkillManager.Instance.SetCurrentSkill(null);
             Observer.Instance.Announce(new Message(EventType.ChangePlayerState, EPlayerState.Normal));
         }
@@ -29,8 +30,23 @@ public abstract class Skill
     /// <summary>
     /// called when player collect skill object
     /// </summary>
-    public abstract void ActivateSkill();
+    public void ActivateSkill()
+    {
+        if (beingActiveSkill)
+            return;
+
+        beingActiveSkill = true;
+        OnActivateSkill();
+    }
+
+    protected abstract void OnActivateSkill();
 
     protected abstract bool DoSkill();
+
+    private void FinishSkill()
+    {
+        beingActiveSkill = false;
+        OnSkillFinish();
+    }
     protected abstract void OnSkillFinish();
 }

@@ -9,8 +9,11 @@ public class LimitRange : MonoBehaviour
            
         if (collision.tag == "Pipe")
         {
-            PipePoolManager.Instance.BackToInitPostion();
-            SkillManager.Instance.CheckSpawnCharm();
+            PipePoolManager poolManager = PipePoolManager.Instance;
+
+            SkillManager.Instance.CheckSpawnSkillObject();
+            poolManager.BackToInitPostion();
+            poolManager.ChangeNextGroupIndex(false);
         }
     }
 }

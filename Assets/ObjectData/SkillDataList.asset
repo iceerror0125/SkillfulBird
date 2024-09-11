@@ -37,3 +37,21 @@ MonoBehaviour:
     type: 1
     skillName: 
     description: 4
+  - id: 5
+    sprite: {fileID: 21300000, guid: 7ad9f75e8b43a5b4f8a9261e8bf2f0ef, type: 3}
+    color: {r: 0.6226415, g: 0.3025098, b: 0.3025098, a: 1}
+    type: 1
+    skillName: Open way
+    description: 4
+  - id: 6
+    sprite: {fileID: 21300000, guid: 7ad9f75e8b43a5b4f8a9261e8bf2f0ef, type: 3}
+    color: {r: 0.35444108, g: 0.5566038, b: 0.48424032, a: 1}
+    type: 1
+    skillName: Wear weights
+    description: 4
+  - id: 7
+    sprite: {fileID: 21300000, guid: 7ad9f75e8b43a5b4f8a9261e8bf2f0ef, type: 3}
+    color: {r: 0.6509434, g: 0.21800464, b: 0.21800464, a: 1}
+    type: 1
+    skillName: Bird shooting
+    description: 4

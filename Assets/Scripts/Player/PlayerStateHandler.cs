@@ -11,6 +11,8 @@ public class PlayerStateHandler : MonoBehaviour
     private StateMachine stateMachine;
     private PlayerNormalState normalState;
     private PlayerNoFallState noFallState;
+    private PlayerTestingState testingState;
+
     #endregion
     private Dictionary<EPlayerState, PlayerState> mappingState;
 
@@ -43,7 +45,17 @@ public class PlayerStateHandler : MonoBehaviour
     {
         normalState = new PlayerNormalState(player);
         noFallState = new PlayerNoFallState(player);
-        stateMachine = new StateMachine(normalState);
+        testingState = new PlayerTestingState(player);
+
+        if (GameManager.Instance.isTesting)
+        {
+            stateMachine = new StateMachine(testingState);
+
+        }
+        else
+        {
+            stateMachine = new StateMachine(normalState);
+        }
     }
 
     private void MapState()
@@ -68,7 +80,14 @@ public class PlayerStateHandler : MonoBehaviour
 
             if (mappingState.TryGetValue(newState, out var value))
             {
-                stateMachine.ChangeState(value);
+                if (newState is EPlayerState.Normal)
+                {
+                    stateMachine.ChangeState(testingState);
+                }
+                else
+                {
+                    stateMachine.ChangeState(value);
+                }
             }
         }
     }

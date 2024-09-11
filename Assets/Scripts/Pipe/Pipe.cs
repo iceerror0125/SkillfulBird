@@ -24,13 +24,13 @@ public class Pipe : MonoBehaviour
                 }
                 else
                 {
-                    // GameManager.Instance.EndGame();
+                    GameManager.Instance.EndGame();
                 }
             }
         }
     }
 
-    private void BreakPipe()
+    public void BreakPipe()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -49,6 +49,11 @@ public class Pipe : MonoBehaviour
                 spriteRenderer.color = Color.white;
             }
             state = PipeState.Normal;
+        }
+
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
         }
     }
 }

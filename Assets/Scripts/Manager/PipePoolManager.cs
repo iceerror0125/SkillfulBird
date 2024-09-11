@@ -16,6 +16,26 @@ public class PipePoolManager : SingletonMono<PipePoolManager>
     [SerializeField] private int respawnSpace = 5; // space between pipe groups
 
     private Queue<GameObject> pools = new Queue<GameObject>();
+    private int nextGroupIndex;
+    private int pipeCount;
+    public int PipeCount => pipeCount;
+
+    private void OnEnable()
+    {
+        Observer.Instance.Subscribe(EventType.PlusPoint, PlusCount);
+    }
+    private void OnDisable()
+    {
+        Observer.Instance.UnSubscribe(EventType.PlusPoint, PlusCount);
+    }
+    private void PlusCount(Message msg)
+    {
+        pipeCount++;
+    }
+    public void ResetPipeCount()
+    {
+        pipeCount = 0;
+    }
 
     private void Start()
     {
@@ -31,9 +51,11 @@ public class PipePoolManager : SingletonMono<PipePoolManager>
             pipe.transform.position = new Vector2(transform.position.x + initPosition, UnityEngine.Random.Range(-yRange, yRange));
             pools.Enqueue(pipe);
             initPosition += respawnSpace;
-            SkillManager.Instance.CheckSpawnCharm();
+            // SkillManager.Instance.CheckSpawnSkillObject();
         }
         prefab.SetActive(false);
+        nextGroupIndex = 0;
+        pipeCount = 0;
     }
     public void BackToInitPostion()
     {
@@ -41,11 +63,14 @@ public class PipePoolManager : SingletonMono<PipePoolManager>
         respawnPosition = pools.LastOrDefault().transform.position.x + respawnSpace;
         go.transform.position = new Vector2(respawnPosition, UnityEngine.Random.Range(-yRange, yRange));
 
-        Pipe[] pipes = go.GetComponentsInChildren<Pipe>();
+        PipeGroup group = go.GetComponent<PipeGroup>();
+        group.ResetState();
+      /*  Pipe[] pipes = go.GetComponentsInChildren<Pipe>();
         foreach (Pipe pipe in pipes)
         {
             pipe.ToNormalPipe();
-        }
+        }*/
+        
 
         pools.Enqueue(go);
     }
@@ -55,7 +80,11 @@ public class PipePoolManager : SingletonMono<PipePoolManager>
     }
     public void ChangeSpeedGroup(float speed)
     {
-        foreach(var obj in pools)
+        if (speed > 0)
+        {
+            speed *= -1;
+        }
+        foreach (var obj in pools)
         {
             PipeGroup group = obj.GetComponent<PipeGroup>();
             if (group != null)
@@ -64,8 +93,63 @@ public class PipePoolManager : SingletonMono<PipePoolManager>
             }
         }
     }
-    public void SpawnSpecificSkill()
-    {
 
+    /// <summary>
+    /// Get the group in front of the player
+    /// </summary>
+    public PipeGroup GetNextPipeGroup()
+    {
+        if (nextGroupIndex >= pools.Count)
+        {
+            return null;
+        }
+
+        List<GameObject> temp = pools.ToList();
+        PipeGroup group = temp[nextGroupIndex].GetComponent<PipeGroup>();
+        return group;
+    }
+    public void ChangeNextGroupIndex(bool isIncrease)
+    {
+        if (isIncrease)
+        {
+            nextGroupIndex++;
+        }
+        else
+        {
+            nextGroupIndex--;
+        }
+    }
+    public void OpenPipeGroup()
+    {
+        foreach (GameObject group in pools)
+        {
+            PipeGroup pipeGroup = group.GetComponent<PipeGroup>();
+            float yAxis = 4;
+            pipeGroup.MoveBothPipeInSameYAxis(yAxis);
+        }
+    }
+    public void ClosePipeGroup()
+    {
+        foreach(GameObject group in pools)
+        {
+            PipeGroup pipeGroup = group.GetComponent<PipeGroup>();
+            pipeGroup.BackToNormalYAxis();
+        }
+    }
+    public void StopPipes()
+    {
+        foreach(GameObject obj in pools)
+        {
+            PipeGroup group = obj.GetComponent<PipeGroup>();
+            group.SetSpeed(0);
+        }
+    } 
+    public void SetSpeedPipeByDefault()
+    {
+        foreach (GameObject obj in pools)
+        {
+            PipeGroup group = obj.GetComponent<PipeGroup>();
+            group.SetSpeed(GameConstants.DEFAULT_PIPE_SPEED);
+        }
     }
 }

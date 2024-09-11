@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill2 : Skill
+public class SkillImmortal : Skill
 {
     private int counter = 0;
     private int maxCounter = 3;
-    public Skill2(int charmId) : base(charmId)
+    public SkillImmortal(int charmId) : base(charmId)
     {
     }
 
-    public override void ActivateSkill()
+    protected override void OnActivateSkill()
     {
         Observer.Instance.Announce(new Message(EventType.ChangePlayerState, EPlayerState.Immortal));
     }

@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
+  upperPipe: {fileID: 4854639710303839930}
+  lowerPipe: {fileID: 6160851943568899082}
+  pointTrigger: {fileID: 7154176061477817099}
 --- !u!1 &5015641596891817151
 GameObject:
   m_ObjectHideFlags: 0

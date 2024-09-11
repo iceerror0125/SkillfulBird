@@ -22,14 +22,19 @@ public class SkillObject : MonoBehaviour
         image.color = data.color;
         this.skill = skill;
     }
+    public void BackToPool()
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.SetParent(SkillObjectPoolManager.Instance.transform, false);
+        GameConstants.SKILL_SPAWNED = false;
+        PipePoolManager.Instance.ResetPipeCount();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("Player"))
         {
-            // back to pool
-            gameObject.SetActive(false);
-            gameObject.transform.SetParent(SkillObjectPoolManager.Instance.transform, false);
+            BackToPool();
 
             // plus point
             onSkillObjectTrigger?.Invoke();

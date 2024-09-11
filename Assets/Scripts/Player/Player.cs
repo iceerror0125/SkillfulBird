@@ -41,7 +41,8 @@ public class Player : MonoBehaviour
 
     public void ChangeToNoGravity()
     {
-        rb.gravityScale = 0;
+        if (rb.gravityScale != 0)
+            rb.gravityScale = 0;
     }
     public void ChangeToDefaultGravity()
     {
@@ -50,5 +51,22 @@ public class Player : MonoBehaviour
     public void TurnOffYVelocity()
     {
         rb.velocity = new Vector2 (rb.velocity.x, 0);
+    }
+    public void ChangeToZeroVelocity()
+    {
+        rb.velocity = Vector2.zero; 
+    }
+    public void MoveYAxis(float y)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, y);
+    }
+    public void Immobilize()
+    {
+        ChangeToZeroVelocity();
+        ChangeToNoGravity();
+    }
+    public void Mobilize()
+    {
+        ChangeToDefaultGravity();
     }
 }

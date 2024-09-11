@@ -11,12 +11,6 @@ public class Message
     public object param;
     public object returnValue;
 
-    public Message()
-    {
-        eventType = EventType.None;
-        param = null;
-        returnValue = null;
-    }
     public Message(EventType eventType, object param = null)
     {
         this.eventType = eventType;
@@ -28,7 +22,7 @@ public class Message
     }
 }
 
-public class Observer : SingletonMono<Observer>
+public class Observer : Singleton<Observer>
 {
     private Dictionary<EventType, List<Action<Message>>> observer = new();
 
@@ -64,7 +58,6 @@ public class Observer : SingletonMono<Observer>
     public void Announce(Message message)
     {
         EventType type = message.eventType;
-
         if (observer.ContainsKey(type))
         {
             foreach (Action<Message> action in observer[type])
@@ -82,8 +75,6 @@ public class Observer : SingletonMono<Observer>
     public object GetCallBack(Message callBackMsg)
     {
         Announce(callBackMsg);
-        Debug.Log($"call back: {callBackMsg.returnValue}");
-
         return callBackMsg.returnValue;
     }
 }

@@ -1,14 +1,21 @@
-using System.Collections;
+using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SkillManager : SingletonMono<SkillManager>
 {
     [SerializeField] private SkillAsset charmData;
-    // private SkillManager skillManager;
+    [SerializeField] private GameObject pet;
+    [SerializeField] private GameObject directionLine;
+    [SerializeField] private InputManager inputManager;
+
+    public GameObject Pet => pet;
+    public GameObject DirectionLine => directionLine;
+
     private static Dictionary<int, Skill> charmMapping;
     private Skill currentSkill;
+    private int spawnAtScore;
 
     #region Getter Setter
     public Dictionary<int, Skill> CharacterMapping => charmMapping;
@@ -28,10 +35,12 @@ public class SkillManager : SingletonMono<SkillManager>
     private static List<Skill> GetSkillList()
     {
         return new List<Skill>() {
-            new Skill1(1),
-            new Skill2(2),
-            new Skill3(3),
-            new Skill4(4),
+            new SkillRocket(1),
+            new SkillImmortal(2),
+            new SkillPetSummon(3),
+            new SkillTheChallenge(4),
+            new SkillOpenWay(5),
+            // new SkillWearWeights(6),
         };
     }
 
@@ -58,22 +67,30 @@ public class SkillManager : SingletonMono<SkillManager>
         }
     }
 
-    public void CheckSpawnCharm()
+    public void CheckSpawnSkillObject()
     {
-        int random = Random.Range(0, 100);
-        int rate = 50;
-        if (random < rate)
+        if (GameConstants.SKILL_SPAWNED)
+            return;
+
+        int random = UnityEngine.Random.Range(0, 100);
+        int rate = GameConstants.SKILL_SPAWN_RATE;
+        bool isReachScoreSpawn = PipePoolManager.Instance.PipeCount - spawnAtScore == GameConstants.SKILL_SPAWN_AFTER_PIPES;
+        Debug.Log($"{PipePoolManager.Instance.PipeCount} - {spawnAtScore}");
+        // spawn skill object
+        if (random < rate && isReachScoreSpawn)
         {
-            SpawnCharm();
+            GameConstants.SKILL_SPAWNED = true;
+            spawnAtScore = 0;
+            SpawnSkillObject();
         }
     }
-    private void SpawnCharm()
+    private void SpawnSkillObject()
     {
         GameObject pipe = PipePoolManager.Instance.GetHeadPipe();
         SkillObject charm = SkillObjectPoolManager.Instance.GetCharmObject();
         int min = 1;
-        int max = 1;// charmData.dataList.Count;
-        int index = Random.Range(min, max);
+        int max = charmData.dataList.Count;
+        int index = UnityEngine.Random.Range(4, 4);
         if (charm != null)
         {
             charm.transform.SetParent(pipe.transform);
@@ -85,6 +102,7 @@ public class SkillManager : SingletonMono<SkillManager>
             }
         }
     }
+
     public void ActivateSkill()
     {
         if (currentSkill != null)
@@ -98,5 +116,43 @@ public class SkillManager : SingletonMono<SkillManager>
         {
             currentSkill.TriggerSkill();
         }
+    }
+    public void ShowDirectionLine()
+    {
+        directionLine.SetActive(true);
+        inputManager.fixedUpdateCallBack += OnChangeDirectionLineAngle;
+    }
+    public void HideDirectionLine()
+    {
+        directionLine.SetActive(false);
+        inputManager.fixedUpdateCallBack -= OnChangeDirectionLineAngle;
+    }
+
+    public float offsetSpeedValue = 5;
+    private void OnChangeDirectionLineAngle()
+    {
+        float angleOffset = inputManager.mouseVelocity * offsetSpeedValue;
+        float newZAngle = directionLine.transform.localEulerAngles.z + angleOffset;
+        float limitAngle = 45;
+        
+        var vectorAngle = new Vector3(0, 0, ClampAngle(newZAngle, angleOffset, limitAngle));
+        directionLine.transform.DORotate(vectorAngle, 0.1f);
+        // directionLine.transform.eulerAngles = vectorAngle;
+    }
+    private float ClampAngle(float newAngle, float dir, float limitValue)
+    {
+        if (dir > 0)
+        {
+            if (newAngle > limitValue && newAngle < 360 - limitValue)
+            {
+                return limitValue;
+            }
+        }
+        else
+        {
+            if (newAngle < 360 - limitValue && newAngle > limitValue)
+                return 360 - limitValue;
+        }
+        return newAngle;
     }
 }
