@@ -46,5 +46,14 @@ public class UIController : MonoBehaviour
     {
         endGamePanel.SetActive(false);
         GameManager.Instance.Restart();
+        Observer.Instance.Announce(new Message(EventType.ResetPoint));
+    }
+    public void ExitGame()
+    {
+        GameManager.Instance.ExitGame();
+    }
+    public void BackToMainMenu()
+    {
+        GameManager.Instance.GoBackToMainMenu();
     }
 }

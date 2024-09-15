@@ -19,6 +19,7 @@ public class PointTrigger : MonoBehaviour
             SkillManager.Instance.TriggerSkill();
             poolManager.ChangeNextGroupIndex(true);
             poolManager.GetNextPipeGroup();
+
         }
     }
 
