@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e04b798e99a4f549aab1ac1d9d751bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTesting: 1
+  isTesting: 0
   isImortalTesting: 0
 --- !u!4 &425300132
 Transform:
