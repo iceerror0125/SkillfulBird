@@ -11,4 +11,7 @@ public enum EventType
     ResetPoint,
     PlusPoint,
     ShowGameOverPanel,
+
+    //Background
+    BackgroundReachLimit
 }
