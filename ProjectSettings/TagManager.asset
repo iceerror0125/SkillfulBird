@@ -49,6 +49,9 @@ TagManager:
   - name: Obstacle
     uniqueID: 587901313
     locked: 0
+  - name: Fx
+    uniqueID: 3084950317
+    locked: 0
   - name: Player
     uniqueID: 3590448851
     locked: 0

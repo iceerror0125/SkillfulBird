@@ -135,7 +135,6 @@ public class ParallelBackground : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogWarning(collision.tag);
         if (collision.tag.Equals("BackgroundLimit"))
         {
             Observer.Instance.Announce(new Message(EventType.BackgroundReachLimit, this));

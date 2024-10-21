@@ -74,8 +74,8 @@ public class SkillManager : SingletonMono<SkillManager>
 
         int random = UnityEngine.Random.Range(0, 100);
         int rate = GameConstants.SKILL_SPAWN_RATE;
+        Debug.Log($"{PipePoolManager.Instance.PipeCount} - {spawnAtScore} == {GameConstants.SKILL_SPAWN_AFTER_PIPES}");
         bool isReachScoreSpawn = PipePoolManager.Instance.PipeCount - spawnAtScore == GameConstants.SKILL_SPAWN_AFTER_PIPES;
-        Debug.Log($"{PipePoolManager.Instance.PipeCount} - {spawnAtScore}");
         // spawn skill object
         if (random < rate && isReachScoreSpawn)
         {
@@ -88,8 +88,8 @@ public class SkillManager : SingletonMono<SkillManager>
     {
         GameObject pipe = PipePoolManager.Instance.GetHeadPipe();
         SkillObject charm = SkillObjectPoolManager.Instance.GetCharmObject();
-        int min = 1;
-        int max = charmData.dataList.Count;
+        // int min = 1;
+        // int max = charmData.dataList.Count;
         int index = UnityEngine.Random.Range(4, 4);
         if (charm != null)
         {

@@ -44,9 +44,9 @@ public class PipeGroup : MonoBehaviour
     /// </summary>
     public void BackToNormalYAxis()
     {
-        float originY = pointTrigger.transform.position.y;
-        upperPipe.transform.DOMoveY(originY + 1, 0.5f);
-        lowerPipe.transform.DOMoveY(originY - 1, 0.5f);
+        float originY = pointTrigger.transform.localPosition.y;
+        upperPipe.transform.DOLocalMoveY(originY + 1, 0.5f);
+        lowerPipe.transform.DOLocalMoveY(originY - 1, 0.5f);
     }
     public void ResetState()
     {
